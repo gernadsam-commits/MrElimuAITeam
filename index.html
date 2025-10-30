@@ -32,37 +32,37 @@
       <h3>Explore Modules</h3>
       <input type="text" id="searchInput" placeholder="Search modules..." />
       <div class="grid" id="moduleGrid">
-        <div class="card">
+        <div class="card" data-keywords="color palette contrast">
           <h4>Color</h4>
           <p>Emotionally intelligent palettes and contrast systems.</p>
           <a href="color.html">Go to Module</a>
         </div>
 
-        <div class="card">
+        <div class="card" data-keywords="typography fonts tone trust clarity">
           <h4>Typography</h4>
           <p>Fonts that guide tone, trust, and clarity.</p>
           <a href="typography.html">Go to Module</a>
         </div>
 
-        <div class="card">
+        <div class="card" data-keywords="accessibility dignity inclusion learners">
           <h4>Accessibility</h4>
           <p>Designing with dignity — for every learner, every ability.</p>
           <a href="accessibility.html">Go to Module</a>
         </div>
 
-        <div class="card">
+        <div class="card" data-keywords="routing navigation classroom">
           <h4>Routing</h4>
           <p>Seamless navigation across your sovereign classroom.</p>
           <a href="routing.html">Go to Module</a>
         </div>
 
-        <div class="card">
+        <div class="card" data-keywords="templates layouts reusable emotion clarity">
           <h4>Templates</h4>
           <p>Reusable layouts that scale with clarity and emotion.</p>
           <a href="templates.html">Go to Module</a>
         </div>
 
-        <div class="card">
+        <div class="card" data-keywords="seo discoverable kenya learners">
           <h4>SEO</h4>
           <p>Make Mr.Elimu discoverable — for learners across Kenya and beyond.</p>
           <a href="seo.html">Go to Module</a>
@@ -75,19 +75,18 @@
     <p>by Samuel Andala — Visionary Architect of MrElimuAITeam</p>
   </footer>
 
-  <!-- Scripts -->
   <script>
     // Search filter
     const searchInput = document.getElementById('searchInput');
-    const grid = document.getElementById('moduleGrid');
+    const cards = document.querySelectorAll('.card');
 
     searchInput.addEventListener('input', () => {
       const query = searchInput.value.toLowerCase();
-      const cards = grid.querySelectorAll('.card');
-
       cards.forEach(card => {
-        const text = card.textContent.toLowerCase();
-        card.style.display = text.includes(query) ? '' : 'none';
+        const keywords = card.dataset.keywords;
+        const content = card.textContent.toLowerCase();
+        const match = content.includes(query) || keywords.includes(query);
+        card.style.display = match ? 'block' : 'none';
       });
     });
 
@@ -104,21 +103,5 @@
         .catch(err => console.error('Service Worker failed:', err));
     }
   </script>
-  <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const searchInput = document.getElementById('searchInput');
-    const cards = document.querySelectorAll('.card');
-
-    searchInput.addEventListener('input', () => {
-      const query = searchInput.value.toLowerCase();
-      cards.forEach(card => {
-        const text = card.textContent.toLowerCase();
-        card.style.visibility = text.includes(query) ? 'visible' : 'hidden';
-        card.style.height = text.includes(query) ? 'auto' : '0';
-        card.style.margin = text.includes(query) ? '1rem 0' : '0';
-      });
-    });
-  });
-</script>
 </body>
 </html>
