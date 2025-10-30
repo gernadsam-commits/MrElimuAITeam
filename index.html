@@ -90,10 +90,11 @@
     });
   });
     // Contrast toggle
-    const toggle = document.getElementById('contrastToggle');
-    toggle.addEventListener('click', () => {
-      document.body.classList.toggle('high-contrast');
-    });
+  const toggle = document.getElementById('contrastToggle');
+  toggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+  });
+
 
     // Service worker
     if ('serviceWorker' in navigator) {
