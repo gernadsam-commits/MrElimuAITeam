@@ -184,5 +184,27 @@ label {
   margin-top: 1rem;
   font-size: 1.2rem;
   font-weight: bold;
+  .progress {
+  padding: 2rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+.module {
+  background: #f0f8ff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.module span {
+  font-weight: bold;
+  color: #004080;
+}
   color: #004080;
 }

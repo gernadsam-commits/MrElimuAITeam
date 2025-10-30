@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Progress Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Your Progress</h1>
+    <p>Track your mastery across Mr.Elimu modules.</p>
+  </header>
+
+  <main>
+    <section class="progress">
+      <div class="module" id="colorProgress">Color: <span></span></div>
+      <div class="module" id="typographyProgress">Typography: <span></span></div>
+      <div class="module" id="accessibilityProgress">Accessibility: <span></span></div>
+      <div class="module" id="routingProgress">Routing: <span></span></div>
+      <div class="module" id="templatesProgress">Templates: <span></span></div>
+      <div class="module" id="seoProgress">SEO: <span></span></div>
+      <div class="module" id="quizProgress">Quiz: <span></span></div>
+    </section>
+  </main>
+
+  <script>
+    function getStatus(score) {
+      if (score === null) return "❌ Not started";
+      if (score < 2) return "🧠 Learning";
+      if (score < 4) return "📈 Improving";
+      return "✅ Mastered";
+    }
+
+    document.getElementById('colorProgress').querySelector('span').textContent = getStatus(localStorage.getItem('colorScore'));
+    document.getElementById('typographyProgress').querySelector('span').textContent = getStatus(localStorage.getItem('typographyScore'));
+    document.getElementById('accessibilityProgress').querySelector('span').textContent = getStatus(localStorage.getItem('accessibilityScore'));
+    document.getElementById('routingProgress').querySelector('span').textContent = getStatus(localStorage.getItem('routingScore'));
+    document.getElementById('templatesProgress').querySelector('span').textContent = getStatus(localStorage.getItem('templatesScore'));
+    document.getElementById('seoProgress').querySelector('span').textContent = getStatus(localStorage.getItem('seoScore'));
+    document.getElementById('quizProgress').querySelector('span').textContent = getStatus(localStorage.getItem('quizScore'));
+  </script>
+</body>
+</html>
