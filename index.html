@@ -104,5 +104,21 @@
         .catch(err => console.error('Service Worker failed:', err));
     }
   </script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('searchInput');
+    const cards = document.querySelectorAll('.card');
+
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.toLowerCase();
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.visibility = text.includes(query) ? 'visible' : 'hidden';
+        card.style.height = text.includes(query) ? 'auto' : '0';
+        card.style.margin = text.includes(query) ? '1rem 0' : '0';
+      });
+    });
+  });
+</script>
 </body>
 </html>
