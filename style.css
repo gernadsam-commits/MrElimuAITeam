@@ -321,3 +321,30 @@ li {
   border: none;
   cursor: pointer;
 }
+.dashboard {
+  padding: 2rem;
+}
+
+.dashboard h2 {
+  margin-top: 2rem;
+  color: #004080;
+}
+
+.dashboard ul {
+  list-style: none;
+  padding: 0;
+}
+
+.dashboard li {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-left: 4px solid #004080;
+}
+body {
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+body.fade-in {
+  opacity: 1;
+}
