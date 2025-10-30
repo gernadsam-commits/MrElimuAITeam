@@ -207,4 +207,41 @@ label {
   color: #004080;
 }
   color: #004080;
+  /* Emotion-driven transitions */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+button,
+a {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#searchInput {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.module {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.module:hover {
+  background-color: #e0f7fa;
+  transform: scale(1.02);
+}
+}
+body {
+  opacity: 0;
+  animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }
