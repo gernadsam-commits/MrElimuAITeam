@@ -124,3 +124,11 @@ body.high-contrast .card {
 body.high-contrast a {
   color: #00ffff;
 }
+.card.hidden {
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+}

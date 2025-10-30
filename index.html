@@ -77,19 +77,18 @@
 
   <script>
     // Search filter
+  document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('searchInput');
     const cards = document.querySelectorAll('.card');
 
     searchInput.addEventListener('input', () => {
       const query = searchInput.value.toLowerCase();
       cards.forEach(card => {
-        const keywords = card.dataset.keywords;
-        const content = card.textContent.toLowerCase();
-        const match = content.includes(query) || keywords.includes(query);
-        card.style.display = match ? 'block' : 'none';
+        const text = card.textContent.toLowerCase();
+        card.classList.toggle('hidden', !text.includes(query));
       });
     });
-
+  });
     // Contrast toggle
     const toggle = document.getElementById('contrastToggle');
     toggle.addEventListener('click', () => {
