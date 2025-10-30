@@ -348,3 +348,17 @@ body {
 body.fade-in {
   opacity: 1;
 }
+.manifesto {
+  padding: 2rem;
+  line-height: 1.6;
+}
+
+.manifesto h2 {
+  margin-top: 2rem;
+  color: #004080;
+}
+
+.manifesto ul {
+  list-style: disc;
+  padding-left: 2rem;
+}
