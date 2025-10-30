@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mr.Elimu Quiz</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Module Quiz</h1>
+    <p>Test your understanding — even offline.</p>
+  </header>
+
+  <main>
+    <section class="quiz">
+      <div class="question" data-answer="b">
+        <p>Which tag is used for semantic navigation?</p>
+        <label><input type="radio" name="q1" value="a" /> &lt;div&gt;</label>
+        <label><input type="radio" name="q1" value="b" /> &lt;nav&gt;</label>
+        <label><input type="radio" name="q1" value="c" /> &lt;span&gt;</label>
+      </div>
+
+      <div class="question" data-answer="a">
+        <p>Which color system supports emotional clarity?</p>
+        <label><input type="radio" name="q2" value="a" /> HSL</label>
+        <label><input type="radio" name="q2" value="b" /> RGB</label>
+        <label><input type="radio" name="q2" value="c" /> HEX</label>
+      </div>
+
+      <button id="submitQuiz">Submit Answers</button>
+      <div id="feedback"></div>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById('submitQuiz').addEventListener('click', () => {
+      const questions = document.querySelectorAll('.question');
+      let score = 0;
+
+      questions.forEach((q, i) => {
+        const correct = q.dataset.answer;
+        const selected = q.querySelector('input:checked');
+        if (selected && selected.value === correct) score++;
+      });
+
+      localStorage.setItem('quizScore', score);
+      const feedback = document.getElementById('feedback');
+      feedback.innerHTML = score === questions.length
+        ? "✅ You’ve mastered this module. Well done!"
+        : `🧠 You scored ${score}/${questions.length}. Keep learning — you’re growing.`;
+    });
+  </script>
+</body>
+</html>

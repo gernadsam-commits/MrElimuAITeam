@@ -158,3 +158,31 @@ body.dark-mode #searchInput {
   color: #f0f0f0;
   border-color: #555;
 }
+.quiz {
+  padding: 2rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+.question {
+  margin-bottom: 2rem;
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.question p {
+  font-weight: bold;
+}
+
+label {
+  display: block;
+  margin: 0.5rem 0;
+}
+
+#feedback {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #004080;
+}
