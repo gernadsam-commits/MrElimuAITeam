@@ -22,6 +22,7 @@
   </header>
 
   <main>
+    <button id="contrastToggle">Toggle High Contrast</button>
     <section class="hero">
       <h2>To unlock the full potential of every Kenyan learner</h2>
       <p>Accessible, affordable, high-quality education — online and offline, rooted in culture and clarity.</p>
@@ -68,6 +69,17 @@
       </div>
     </section>
   </main>
+  <script>
+  const toggle = document.getElementById('contrastToggle');
+  toggle.addEventListener('click', () => {
+    document.body.classList.toggle('high-contrast');
+  });
+    if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js')
+      .then(reg => console.log('Service Worker registered:', reg))
+      .catch(err => console.error('Service Worker failed:', err));
+  }
+</script>
 
   <footer>
     <p>Built by Samuel Andala — Visionary Architect of MrElimuAITeam</p>
