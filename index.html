@@ -23,6 +23,7 @@
   </header>
 
   <main>
+ 
     <section class="hero">
       <h2>To unlock the full potential of every Kenyan learner</h2>
       <p>Accessible, affordable, high-quality education — online and offline, rooted in culture and clarity.</p>
@@ -33,6 +34,9 @@
       <input type="text" id="searchInput" placeholder="Search modules..." />
       <div class="grid" id="moduleGrid">
         <div class="card">
+            <div class="grid" id="moduleGrid">
+  <!-- Cards go here -->
+</div>
           <h4>Color</h4>
           <p>Emotionally intelligent palettes and contrast systems.</p>
           <a href="color.html">Go to Module</a>
@@ -78,16 +82,19 @@
   <!-- Search + Contrast + Service Worker -->
   <script>
     // Search filter
-    const searchInput = document.getElementById('searchInput');
-    const cards = document.querySelectorAll('.card');
-    searchInput.addEventListener('input', () => {
-      const query = searchInput.value.toLowerCase();
-      cards.forEach(card => {
-        const text = card.textContent.toLowerCase();
-        card.style.display = text.includes(query) ? 'block' : 'none';
-      });
-    });
+   
+  const searchInput = document.getElementById('searchInput');
+  const grid = document.getElementById('moduleGrid');
 
+  searchInput.addEventListener('input', () => {
+    const query = searchInput.value.toLowerCase();
+    const cards = grid.querySelectorAll('.card');
+
+    cards.forEach(card => {
+      const text = card.textContent.toLowerCase();
+      card.style.display = text.includes(query) ? '' : 'none';
+    });
+  });
     // Contrast toggle
     const toggle = document.getElementById('contrastToggle');
     toggle.addEventListener('click', () => {
