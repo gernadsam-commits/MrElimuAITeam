@@ -27,6 +27,7 @@
   <script>
     function getStatus(score) {
       if (score === null) return "❌ Not started";
+      score = parseInt(score);
       if (score < 2) return "🧠 Learning";
       if (score < 4) return "📈 Improving";
       return "✅ Mastered";
