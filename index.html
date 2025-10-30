@@ -23,7 +23,6 @@
   </header>
 
   <main>
- 
     <section class="hero">
       <h2>To unlock the full potential of every Kenyan learner</h2>
       <p>Accessible, affordable, high-quality education — online and offline, rooted in culture and clarity.</p>
@@ -34,9 +33,6 @@
       <input type="text" id="searchInput" placeholder="Search modules..." />
       <div class="grid" id="moduleGrid">
         <div class="card">
-            <div class="grid" id="moduleGrid">
-  <!-- Cards go here -->
-</div>
           <h4>Color</h4>
           <p>Emotionally intelligent palettes and contrast systems.</p>
           <a href="color.html">Go to Module</a>
@@ -76,25 +72,25 @@
   </main>
 
   <footer>
-    <p>Built by Mr.Man — Visionary Architect of MrElimuAITeam</p>
+    <p>by Samuel Andala — Visionary Architect of MrElimuAITeam</p>
   </footer>
 
-  <!-- Search + Contrast + Service Worker -->
+  <!-- Scripts -->
   <script>
     // Search filter
-   
-  const searchInput = document.getElementById('searchInput');
-  const grid = document.getElementById('moduleGrid');
+    const searchInput = document.getElementById('searchInput');
+    const grid = document.getElementById('moduleGrid');
 
-  searchInput.addEventListener('input', () => {
-    const query = searchInput.value.toLowerCase();
-    const cards = grid.querySelectorAll('.card');
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.toLowerCase();
+      const cards = grid.querySelectorAll('.card');
 
-    cards.forEach(card => {
-      const text = card.textContent.toLowerCase();
-      card.style.display = text.includes(query) ? '' : 'none';
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(query) ? '' : 'none';
+      });
     });
-  });
+
     // Contrast toggle
     const toggle = document.getElementById('contrastToggle');
     toggle.addEventListener('click', () => {
