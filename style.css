@@ -301,3 +301,23 @@ li {
   border-bottom: 1px solid #ddd;
   margin-bottom: 1rem;
 }
+.search {
+  text-align: center;
+  padding: 2rem;
+}
+
+#searchInput {
+  width: 60%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+
+#voiceBtn {
+  padding: 0.8rem;
+  font-size: 1.2rem;
+  background-color: #004080;
+  color: white;
+  border: none;
+  cursor: pointer;
+}

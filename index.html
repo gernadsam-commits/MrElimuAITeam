@@ -33,7 +33,11 @@
 
     <section class="modules">
       <h3>Explore Modules</h3>
-      <input type="text" id="searchInput" placeholder="Search modules..." />
+      <section class="search">
+  <h2>What do you want to learn today?</h2>
+  <input type="text" id="searchInput" placeholder="Type your topic..." />
+  <button id="voiceBtn">🎤</button>
+</section>
       <div class="grid" id="moduleGrid">
         <div class="card" data-keywords="color palette contrast">
           <h4>Color</h4>
@@ -105,6 +109,20 @@
         .then(reg => console.log('Service Worker registered:', reg))
         .catch(err => console.error('Service Worker failed:', err));
     }
+    const voiceBtn = document.getElementById('voiceBtn');
+const searchInput = document.getElementById('searchInput');
+
+voiceBtn.addEventListener('click', () => {
+  const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+  recognition.lang = 'en-US';
+  recognition.start();
+
+  recognition.onresult = event => {
+    const transcript = event.results[0][0].transcript;
+    searchInput.value = transcript;
+    filterModules(transcript); // Call your filtering function
+  };
+});
     
   </script>
   <script>
