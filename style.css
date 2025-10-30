@@ -245,3 +245,27 @@ body {
     opacity: 1;
   }
 }
+.error {
+  padding: 2rem;
+  text-align: center;
+}
+
+.error ul {
+  list-style: none;
+  padding: 0;
+}
+
+.error li {
+  margin: 1rem 0;
+}
+
+.error a {
+  font-size: 1.2rem;
+  color: #004080;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.error a:hover {
+  color: #0077cc;
+}
