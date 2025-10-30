@@ -38,7 +38,7 @@
       const questions = document.querySelectorAll('.question');
       let score = 0;
 
-      questions.forEach((q, i) => {
+      questions.forEach((q) => {
         const correct = q.dataset.answer;
         const selected = q.querySelector('input:checked');
         if (selected && selected.value === correct) score++;
